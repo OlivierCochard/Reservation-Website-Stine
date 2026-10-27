@@ -1,7 +1,7 @@
 # Stine's Reservation Website
-This is a website that let the client reserve some soy products depending of his surface (ha). The command and the client informations are added in a mysql database, then the admin can call them to pay the command.
+A custom reservation website that allows customers to order soy-based products according to the surface area they need to cover. Orders and customer information are stored in a MySQL database, allowing the administrator to retrieve order details and contact customers to arrange payment.
 
-# Instructions
+# Website
 https://stinefrance.fr/
 
 # Images

@@ -1,0 +1,619 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Helvetica Neue Condensed";
+    src: url("../Imports/Helvetica Neue 67 Medium Condensed.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: "Futura Bold";
+    src: url("../Imports/futura-bold.ttf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: "Helvetica Neue Condensed", sans-serif;
+    background: #f4f6f2;
+    color: #222;
+    padding-bottom: 0px;
+}
+
+
+/* =========================
+   TITRE / INTRODUCTION
+========================= */
+
+.logo {
+    text-align: center;
+}
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    max-width: 700px;
+    margin: 0 auto 15px;
+    text-align: center;
+    font-size: 40px;
+    color: #315c2b;
+    font-family: "Futura Bold", sans-serif;
+}
+
+body > p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    text-align: center;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+/* =========================
+   FORMULAIRE
+========================= */
+
+form {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 35px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Chaque champ */
+
+form > div {
+    margin-bottom: 10px;
+}
+
+
+/* Labels */
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    transition: 0.1s;
+}
+
+
+/* mise en page */
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+.form-row > div {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.form-row-2 {
+    display: flex;
+    gap: 20px;
+}
+.form-row-2 > div {
+    flex: 1 1 1 1;
+    min-width: 0;
+}
+
+.contact {
+    flex: 1 1 0;
+    min-width: 0;
+    text-align: center;
+}
+.contact p {
+    margin: 5px 0;
+}
+
+
+/* non selectionnable */
+
+#nombre_doses, #prix_dose, #prix_total {
+    background-color: #e9e9e9;
+    color: #555;
+    cursor: not-allowed;
+    -moz-appearance: textfield;
+    pointer-events: none;
+}
+#nombre_doses::-webkit-outer-spin-button, #prix_dose::-webkit-outer-spin-button, #prix_total::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* recapitulatif */
+
+.recapitulatif {
+    background-color: #e9e9e9;
+    color: #555;
+    padding: 5px;
+    border-radius: 8px;
+    margin: 0px;
+}
+.caracteristique > p, .caracteristique-special > p {
+    flex: 1 1 0;
+    min-width: 0;
+}
+div.caracteristique, div.caracteristique-special {
+    display: flex;
+    gap: 20px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 40px;
+    margin: 0px;
+
+    align-items: center
+}
+div.caracteristique-special {
+    background-color: #D5D7DB;
+    color: #e9e9e9;
+}
+
+p.caracteristique-value {
+    font-weight: bold;
+    color: #555;
+}
+
+/* variete */
+
+.variete {
+    flex: 1;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    transition: 0.1s;
+}
+
+.variete:hover {
+    border-color: #aaa;
+    background-color: #f7f7f7;
+}
+
+.variete input[type="radio"] {
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.variete-contenu {
+    flex: 1;
+}
+
+.variete-contenu p {
+    margin: 4px 0;
+}
+
+.variete-nom {
+    font-size: 26px;
+    font-weight: bold;
+    color: #555;
+}
+.variete-groupe {
+    font-size: 14px;
+    font-weight: normal;
+    color: #555;
+}
+.variete-quantite {
+    font-size: 18px;
+    color: #7D2E25;
+}
+
+.variete:has(input[type="radio"]:checked) {
+    border-color: #4d873f;
+    background-color: #eef6eb;
+    box-shadow: 0 0 0 2px rgba(77, 135, 63, 0.15);
+}
+
+.variete input[type="radio"] {
+    display: none;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+input[type="text"],
+input[type="tel"],
+input[type="number"] {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 16px;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+
+
+/* Focus */
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus {
+    outline: none;
+    border-color: #4d873f;
+    box-shadow: 0 0 0 3px rgba(77, 135, 63, 0.15);
+}
+
+#nombre_doses:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #ccc;
+}
+
+/* =========================
+   SURFACE / DOSES
+========================= */
+
+form p {
+    color: #555;
+}
+
+/* =========================
+   VARIÉTÉS
+========================= */
+
+form > div:nth-of-type(5) {
+    padding: 20px;
+    background: #f4f7f2;
+    border-radius: 8px;
+}
+
+form > div:nth-of-type(5) > p {
+    margin-top: 0;
+    font-weight: 600;
+    color: #333;
+}
+
+form > div:nth-of-type(5) label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+
+/* =========================
+   CHECKBOX
+========================= */
+
+input[type="checkbox"] {
+    accent-color: #4d873f;
+    cursor: pointer;
+}
+
+.checkbox {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #eef6eb;
+}
+
+div.erreurs {
+    padding: 10px;
+    border-radius: 10px;
+    color: #7D2E25;
+    background-color: #FCE4E1 !important;
+}
+
+form > div:last-of-type label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+
+/* =========================
+   BOUTON
+========================= */
+
+button, a.bouton {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #3f7435;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    font-family: "Futura Bold", sans-serif;
+}
+
+button:hover, a.bouton:hover {
+    background: #315c2b;
+}
+
+button:active, a.bouton:active {
+    transform: scale(0.98);
+}
+
+a.bouton {
+    text-align: center;
+    text-decoration: none;
+}
+
+a {
+    cursor: pointer;
+    color: #3f7435;
+}
+
+/* footer */
+footer {
+    display: block;
+    color: #3f7435;
+    text-align: center;
+    padding: 20px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    /* =========================
+       BODY
+    ========================= */
+
+    body {
+        padding: 20px 10px;
+    }
+
+
+    /* =========================
+       TITRES
+    ========================= */
+
+    h1 {
+        font-size: 24px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 21px;
+        line-height: 1.25;
+        margin-bottom: 18px;
+    }
+
+    body > p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 18px;
+    }
+
+
+    /* =========================
+       FORMULAIRE
+    ========================= */
+
+    form {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 14px;
+        border-radius: 10px;
+    }
+
+    form > div {
+        margin-bottom: 14px;
+    }
+
+
+    /* =========================
+       LABELS
+    ========================= */
+
+    label {
+        margin-bottom: 6px;
+        font-size: 15px;
+    }
+
+
+    /* =========================
+       LIGNES
+    ========================= */
+
+    .form-row,
+    .form-row-2 {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .form-row > div,
+    .form-row-2 > div {
+        width: 100%;
+    }
+
+
+    /* =========================
+       INPUTS
+    ========================= */
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="number"] {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 7px;
+    }
+
+
+    /* =========================
+       VARIÉTÉS
+    ========================= */
+
+    form > div:nth-of-type(5) {
+        padding: 14px;
+    }
+
+    .variete {
+        width: 100%;
+        padding: 14px;
+        min-height: 95px;
+
+        gap: 10px;
+        border-width: 2px;
+    }
+
+    .variete + .variete {
+        margin-top: 10px;
+    }
+
+    .variete-nom {
+        font-size: 21px;
+        line-height: 1.2;
+    }
+
+    .variete-groupe {
+        font-size: 12px;
+    }
+
+    .variete-quantite {
+        font-size: 15px;
+    }
+
+
+    /* =========================
+       RÉCAPITULATIF
+    ========================= */
+
+    div.caracteristique,
+    div.caracteristique-special {
+        min-height: 40px;
+        height: auto;
+
+        padding: 8px 10px;
+        gap: 10px;
+    }
+
+    .caracteristique > p,
+    .caracteristique-special > p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    p.caracteristique-value {
+        text-align: right;
+    }
+
+    .recapitulatif {
+        padding: 4px;
+    }
+
+
+    /* =========================
+       CHECKBOX
+    ========================= */
+
+    .checkbox {
+        padding: 12px 10px;
+    }
+
+    form > div:last-of-type label {
+        gap: 8px;
+        line-height: 1.4;
+    }
+
+    input[type="checkbox"] {
+        flex-shrink: 0;
+    }
+
+
+    /* =========================
+       ERREURS
+    ========================= */
+
+    div.erreurs {
+        padding: 10px;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+
+    /* =========================
+       BOUTON
+    ========================= */
+
+    button {
+        padding: 14px 15px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+}
+
+
+
+/* =========================
+   TRÈS PETITS ÉCRANS
+========================= */
+
+@media (max-width: 380px) {
+
+    body {
+        padding: 15px 7px;
+    }
+
+    h1 {
+        font-size: 21px;
+    }
+
+    h3 {
+        font-size: 19px;
+    }
+
+    body > p {
+        font-size: 13px;
+    }
+
+    form {
+        padding: 16px 11px;
+    }
+
+    .variete {
+        padding: 12px;
+    }
+
+    .variete-nom {
+        font-size: 19px;
+    }
+
+    .variete-quantite {
+        font-size: 14px;
+    }
+
+    .caracteristique > p,
+    .caracteristique-special > p {
+        font-size: 13px;
+    }
+}
